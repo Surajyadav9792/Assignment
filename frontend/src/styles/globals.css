@@ -1,0 +1,62 @@
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/500.css';
+@import '../design/tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root { height: 100%; }
+  body {
+    background-color: var(--ff-bg);
+    color: var(--ff-text);
+    font-family: var(--ff-font-ui);
+    font-size: var(--ff-text-base);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  * { box-sizing: border-box; }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: var(--ff-bg); }
+  ::-webkit-scrollbar-thumb {
+    background: var(--ff-border);
+    border-radius: 6px;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: #2f3742; }
+  input, button, textarea, select { font-family: inherit; }
+  ::selection { background: var(--ff-accent-soft); color: var(--ff-text); }
+  h1, h2, h3, h4 { letter-spacing: -0.01em; }
+}
+
+@layer components {
+  .ff-card {
+    background: var(--ff-bg-elev);
+    border: 1px solid var(--ff-border);
+    border-radius: var(--ff-radius-lg);
+  }
+  .ff-section-title {
+    font-size: var(--ff-text-sm);
+    color: var(--ff-text-muted);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: none;
+  }
+  .ff-mono { font-family: var(--ff-font-mono); font-variant-numeric: tabular-nums; }
+  .ff-focus-ring {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(79, 138, 247, 0.25);
+  }
+  .ff-divider {
+    height: 1px;
+    background: var(--ff-border);
+  }
+}
+
+/* Reduce default motion */
+@media (prefers-reduced-motion: no-preference) {
+  .ff-transition { transition: all 150ms ease-out; }
+}
