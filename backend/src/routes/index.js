@@ -1,0 +1,22 @@
+import { Router } from 'express';
+import auth from './auth.routes.js';
+import users from './user.routes.js';
+import leads from './lead.routes.js';
+import tasks from './task.routes.js';
+import quotes from './quote.routes.js';
+import samples from './sample.routes.js';
+import notifications from './notification.routes.js';
+import analytics from './analytics.routes.js';
+import settings from './settings.routes.js';
+
+const r = Router();
+r.use('/auth', auth);
+r.use('/users', users);
+r.use('/leads', leads);
+r.use('/tasks', tasks);
+r.use('/quotes', quotes);
+r.use('/samples', samples);
+r.use('/notifications', notifications);
+r.use('/analytics', analytics);
+r.use('/settings', settings);
+export default r;
